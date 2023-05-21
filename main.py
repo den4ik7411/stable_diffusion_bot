@@ -31,7 +31,7 @@ sd_skip_link = 'http://127.0.0.1:7861/sdapi/v1/skip'
 default = [{"role": "system",
             "content": "User need generate a picture. You should give user a stable diffusion prompt for generating image. At first, user give you his prompt. You should improve this prompt."}]
 
-# Initialize bot and dispatcher
+
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
@@ -83,7 +83,6 @@ def LoadUsers():
 
 LoadUsers()
 
-
 class States(StatesGroup):
     prompt = State()
     seed = State()
@@ -100,7 +99,6 @@ async def prompt_enter(message: types.CallbackQuery, state: FSMContext):
     current_state = await state.get_state()
     if current_state is None:
         return
-
     logging.info('Cancelling state %r', current_state)
     await w(message.from_user.id, False, None, "cancelled", kb, False)
     await state.finish()
