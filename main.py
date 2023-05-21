@@ -19,9 +19,9 @@ c.execute('''
           ([usr_id] INTEGER PRIMARY KEY, [prompt] TEXT, [seed] INTEGER, [cfg] FLOAT, [steps] INTEGER, [w] INTEGER, [h] INTEGER, [count] INTEGER, [neg] TEXT)
           ''')
 
-API_TOKEN = '6188332253:AAFA6SF7hzq3QHXSsjgePrMVGtsU8JvYDVA'
+API_TOKEN = ''
 
-openai.api_key = "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"
+openai.api_key = ""
 
 sd_txt2img_link = 'http://127.0.0.1:7861/sdapi/v1/txt2img'
 sd_img2img_link = 'http://127.0.0.1:7861/sdapi/v1/img2img'
